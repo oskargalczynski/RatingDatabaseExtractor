@@ -1,0 +1,46 @@
+version: '3'
+
+networks:
+        dbnet:
+                ipam:
+                        config:
+                                - subnet: 172.20.0.0/24
+
+services:
+        mydb:
+                image: 'postgres'
+                volumes:
+                        - 'mydb:/var/lib/postgresql/data'
+                networks:
+                        dbnet:
+                                ipv4_address: 172.20.0.5
+                ports:
+                        - '5432:5432'
+                environment:
+                        POSTGRES_DB: "mydb"
+                        POSTGRES_USER: "user"
+                        POSTGRES_PASSWORD: "pass123"
+        datascience-notebook:
+                image: jupyter/datascience-notebook
+                volumes:
+                        - '#absolute path to repository#/RatingDatabaseExtractor/jupyter:/home/jovyan/work'
+                ports:
+                        - 8888:8888
+                networks:
+                        dbnet:
+                                ipv4_address: 172.20.0.4
+                environment:
+                        JUPYTER_TOKEN: "pass123"
+volumes:
+        mydb:
+                driver: local
+                driver_opts:
+                        type: 'none'
+                        o: 'bind'
+                        device: '#absolute path to repository#/RatingDatabaseExtractor/db'
+        jupyter:
+                driver: local
+                driver_opts:
+                        type: 'none'
+                        o: 'bind'
+                        device: '#absolute path to repository#/RatingDatabaseExtractor/jupyter'
