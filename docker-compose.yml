@@ -23,7 +23,7 @@ services:
         datascience-notebook:
                 image: jupyter/datascience-notebook
                 volumes:
-                        - '#absolute path to repository#/RatingDatabaseExtractor/jupyter:/home/jovyan/work'
+                        - '#absolute path to repository#/jupyter:/home/jovyan/work'
                 ports:
                         - 8888:8888
                 networks:
@@ -37,10 +37,10 @@ volumes:
                 driver_opts:
                         type: 'none'
                         o: 'bind'
-                        device: '#absolute path to repository#/RatingDatabaseExtractor/db'
+                        device: '#absolute path to repository#/db'
         jupyter:
                 driver: local
                 driver_opts:
                         type: 'none'
                         o: 'bind'
-                        device: '#absolute path to repository#/RatingDatabaseExtractor/jupyter'
+                        device: '#absolute path to repository#/jupyter'
