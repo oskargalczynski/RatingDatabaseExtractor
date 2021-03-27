@@ -49,7 +49,7 @@ Both [PostgreSQL][3] and [Jupyter Notebook][4] are accesible on 0.0.0.0 host.
 [Jupyter Notebook][4] credentials:
 - internal docker host = 172.20.0.4
 - port = 8888
--password/token = pass123
+- password/token = pass123
 
 To acces Jupyter Notebook open http://0.0.0.0:8888 and using passowrd provided above, log in. In folder "work" you can find [DataBaseExtractor.ipynb][12] notebook with both script and exectution results.
 
