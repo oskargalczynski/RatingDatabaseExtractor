@@ -51,9 +51,11 @@ Both [PostgreSQL][3] and [Jupyter Notebook][4] are accesible on 0.0.0.0 host.
 - port = 8888
 -password/token = pass123
 
-To acces Jupyter Notebook open http://0.0.0.0:8888 and using passowrd provided above, log in. In folder "work" you can find [DataBaseExtractor.ipynb][12] notebook with both script and exectution results. Do re-do this solution simply create new notebook, import [psycopg2-binary][5]:
-`pip install psycopg2-binary`
-paste script from [DataBaseExtractor.ipynb][12] and execute.
+To acces Jupyter Notebook open http://0.0.0.0:8888 and using passowrd provided above, log in. In folder "work" you can find [DataBaseExtractor.ipynb][12] notebook with both script and exectution results.
+
+To re-do this solution simply create new notebook, import [psycopg2-binary][5]:
+`pip install psycopg2-binary` press run,
+then paste script from [DataBaseExtractor.ipynb][12] and execute.
 
 ## Technical notes
 Database data and Jupyter Notebook storage files are stored in repository, only docker images will be downloaded during setting up docker containers.
